@@ -1,5 +1,11 @@
 #! /usr/bin/env make
 
+all: RProject_Complete.pdf RProject_Complete.html
+
+RProject_Complete.pdf: RProject_Complete.md ViEWSMAPGridCell.png 
+	pandoc RProject_Complete.md -s --mathjax -f markdown+tex_math_dollars -t pdf -o RProject_Complete.pdf	 
+
+
 RProject_Complete.html: RProject_Complete.md ViEWSMapGridCell.png	
 	pandoc RProject_Complete.md -s --mathjax -f markdown+tex_math_dollars -t html -o RProject_Complete.html
 
